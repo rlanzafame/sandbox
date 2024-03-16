@@ -1,0 +1,5 @@
+(define (sq x) (* x x))
+(define (sumsq x y) (+ (sq x) (sq y)))
+(define (check2 a b) (if (or (< a b) (= a b)) #t #f))
+(define (check3 a b c) (if (and (check2 a b) (check2 a c)) #t #f))
+(define (result a b c) (cond ((if (check3 a b c) #t #f) (sumsq b c)) ((if (check3 b a c) #t #f) (sumsq a c)) ((if (check3 c a b) #t #f) (sumsq a b))))
