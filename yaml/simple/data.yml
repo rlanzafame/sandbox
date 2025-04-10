@@ -1,0 +1,19 @@
+collection:
+  thing1:
+    name: thing1
+    description: This is thing1
+  thing2:
+    &thing2
+    name: thing2
+    description: This is thing2
+  thing3: thing2
+  thing4: *thing2
+  thing5:
+    &thing5
+    subthing1:
+      subthing2: thing
+  thing6:
+    - *thing2
+    - *thing5
+    - test: blah
+      second: blah
